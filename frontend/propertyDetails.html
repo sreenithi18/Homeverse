@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <h1>Property Details</h1>
+    <div>
+        <p>Location: <span id="location"></span></p>
+        <p>Category: <span id="category"></span></p>
+        <p>Min Price: <span id="min-price"></span></p>
+        <p>Max Price: <span id="max-price"></span></p>
+    </div>
+
+    <script>
+        // Retrieve parameters from URL
+        const params = new URLSearchParams(window.location.search);
+        const location = params.get('location');
+        const category = params.get('category');
+        const minPrice = params.get('min-price');
+        const maxPrice = params.get('max-price');
+
+        // Update HTML with retrieved parameters
+        document.getElementById('location').innerText = location;
+        document.getElementById('category').innerText = category;
+        document.getElementById('min-price').innerText = minPrice;
+        document.getElementById('max-price').innerText = maxPrice;
+    </script>
+
+</body>
+</html>
